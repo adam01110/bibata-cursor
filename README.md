@@ -1,3 +1,31 @@
+# Hyprcursor roadmap
+
+- [x] extract themes
+- [x] recolor svgs
+- [x] remove old png files
+- [ ] edit mate.hl files to use svg
+- [ ] compress the theme
+
+
+### How it works?
+
+new files:
+- hyprcursor-build.sh:  
+  - Gets called at the end of the build script to compile hyprcursor
+  - Extracts themes from generated xcursor themes in the hyprcursor-build directory
+  - Calls recolor-svgs.py to generate colored svg files
+  - deletes old png files replacing theme with svgs
+
+- recolor-svgs.py:
+  - gets called from hyprcursor-build.sh
+  - reads the colors in render.json
+  - generates new svg files with the desired colors in the hyprcursor-build directory
+
+
+
+
+---
+
 ## ⚠️ Notice: Final Major Version v2.x.x
 
 I've launched the successor to this project at https://www.github.com/ful1e5/bibata for **downloading and personalizing Bibata**, now the main source for new features. I recommend downloading from there. This repository is still maintained for [Linux packages](#packages).
