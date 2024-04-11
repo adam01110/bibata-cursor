@@ -97,3 +97,5 @@ cd ..
 # Copying License File for 'bitmaps'
 cp LICENSE bitmaps/
 zip -rv bin/bitmaps.zip bitmaps
+
+source ./hyprcursor-build.sh
