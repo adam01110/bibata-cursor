@@ -5,7 +5,6 @@ rm -rf hyprcursor-build
 mkdir -p hyprcursor-build
 
 for theme in $(find ./themes -maxdepth 1 -type d | grep "Bibata-*"); do
-  theme_name=$(basename "$theme")
   hyprcursor-util --extract "$theme" --output "hyprcursor-build"
 done
 
@@ -13,28 +12,49 @@ python3 recolor-svgs.py
 
 for theme in $(find ./hyprcursor-build -maxdepth 1 -type d | grep "extracted_Bibata-*"); do
   theme_name=$(basename "$theme")
-  for shape in $(find "$theme/hyprcursors" -maxdepth 2 -type d); do
+  theme_base=$(echo "$theme_name" | cut -d'_' -f2)
+  for shape in $(find "$theme/hyprcursors/" -maxdepth 1 -mindepth 1 -type d); do
     shape_name=$(basename "$shape")
-    svg_files=$(find "./hyprcursor-build/recolored_svgs/$theme_base" -name "$shape_name.svg" | grep "$shape_name")
-    theme_base=$(echo "$theme_name" | cut -d'_' -f2)
+    svg_files=$(find "./hyprcursor-build/recolored_svgs/$theme_base/" -name "$shape_name.svg" | grep "$shape_name")
     if [ -z "$svg_files" ]; then
         if [ "$shape_name" == "wait" ]; then
             svg_files=$(find "./hyprcursor-build/recolored_svgs/$theme_base/wait/" -name "*.svg")
         elif [ "$shape_name" == "left_ptr_watch" ]; then
-            svg_files=$(find "./hyprcursor-build/recolored_svgs/$theme_namebase/left_ptr_watch/" -name "*.svg")
+            svg_files=$(find "./hyprcursor-build/recolored_svgs/$theme_base/left_ptr_watch/" -name "*.svg")
         fi
     fi
     echo "$theme_base: $shape_name -> $svg_files"
     if [ -z "$svg_files" ]; then
-        echo "No SVG file found for $theme_base: $shape_name"
+        # echo "No SVG file found for $theme_base: $shape_name"
         exit 1
     fi
 
-    rm -rf "$shape/*.png"
-
+    png_files=$(find "$shape" -name "*.png")
+    for png_file in $png_files; do
+      rm "$png_file"
+    done
+    meta_file=$(find "$shape" -name "meta.hl")
+    python3 edit-meta.py "$meta_file" "$svg_files"
     for svg_file in $svg_files; do
       mv "$svg_file" "$shape"
     done
-    # TODO: edit the meta.hl files
   done
 done
+
+for theme in $(find ./hyprcursor-build/ -maxdepth 1 -type d | grep "extracted_Bibata-*"); do
+  manifest_file=$(find "$theme" -name "manifest.hl")
+  python3 edit-manifest.py "$manifest_file" "$(basename "$theme" | cut -d'_' -f2)"
+  hyprcursor-util --create "$theme" --output "hyprcursor-build"
+done
+
+cd hyprcursor-build
+for compressed_theme in $(find . -maxdepth 1 -type d | grep "theme_Bibata-*"); do
+  echo "Compressing $compressed_theme"
+
+  tar -cJvf "hypr_$(basename "$compressed_theme"| cut -d'_' -f2).tar.xz" "$compressed_theme/"
+done
+cd ..
+
+
+
+mv hyprcursor-build/*.tar.xz bin/

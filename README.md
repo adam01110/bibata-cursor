@@ -3,8 +3,8 @@
 - [x] extract themes
 - [x] recolor svgs
 - [x] remove old png files
-- [ ] edit mate.hl files to use svg
-- [ ] compress the theme
+- [x] edit mate.hl files to use svg
+- [x] compress the theme
 
 
 ### How it works?
