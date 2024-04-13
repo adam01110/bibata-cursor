@@ -30,18 +30,13 @@ def main():
                     colors = []
                     color_1_match = lines[i+4].replace("{ \"match\": \"", "").split("\", \"replace\": \"")[0].strip()
                     color_1_replace = lines[i+4].split("\", \"replace\": \"")[1].replace('" },\n', "")
-                    color_2_match = lines[i+4].replace("{ \"match\": \"", "").split("\", \"replace\": \"")[0].strip()
-                    color_2_replace = lines[i+4].split("\", \"replace\": \"")[1].replace('" },\n', "")
-                    color_3_match = lines[i+4].replace("{ \"match\": \"", "").split("\", \"replace\": \"")[0].strip()
-                    color_3_replace = lines[i+4].split("\", \"replace\": \"")[1].replace('" },\n', "")
+                    color_2_match = lines[i+5].replace("{ \"match\": \"", "").split("\", \"replace\": \"")[0].strip()
+                    color_2_replace = lines[i+5].split("\", \"replace\": \"")[1].replace('" },\n', "")
+                    color_3_match = lines[i+6].replace("{ \"match\": \"", "").split("\", \"replace\": \"")[0].strip()
+                    color_3_replace = lines[i+6].split("\", \"replace\": \"")[1].replace('" },\n', "")
                     colors.append((color_1_match, color_1_replace))
                     colors.append((color_2_match, color_2_replace))
                     colors.append((color_3_match, color_3_replace))
-                    theme_type = theme_name.split("-")[2]
-                    if theme_type == "Ice":
-                        colors.append(("\"#0000FF\"", "\"#000000\""))
-                    else:
-                        colors.append(("\"#0000FF\"", "\"#FFFFFF\""))
                     renderers.append(Renderer(svgs_dir, output, theme_name, colors))
 
     for renderer in renderers:
