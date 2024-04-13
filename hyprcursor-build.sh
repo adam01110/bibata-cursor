@@ -50,11 +50,12 @@ done
 cd hyprcursor-build
 for compressed_theme in $(find . -maxdepth 1 -type d | grep "theme_Bibata-*"); do
   echo "Compressing $compressed_theme"
-
-  tar -cJvf "hypr_$(basename "$compressed_theme"| cut -d'_' -f2).tar.xz" "$compressed_theme/"
+  cd "$compressed_theme"
+  tar -czf "hypr_$(basename "$compressed_theme"| cut -d'_' -f2).tar.gz" .
+  cd ..
 done
 cd ..
 
 
 
-mv hyprcursor-build/*.tar.xz bin/
+mv hyprcursor-build/*/*.tar.gz bin/
