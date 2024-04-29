@@ -1,4 +1,5 @@
 import os
+import json
 
 
 class Renderer:
@@ -19,25 +20,21 @@ def main():
     renderers = []
 
     with open(render_file, "r") as f:
-        lines = f.readlines()
-        for i in range(0, len(lines)):
-            if lines[i].strip().startswith("\"") and lines[i].strip().endswith("\": {"):
-                theme_name = lines[i].strip().strip("\"").strip("\": {")
-                if not theme_name.endswith("-Right"):
-                    svgs_dir = lines[i + 1].replace("\"dir\": \"", "").replace("\",", "").strip()
-                    output = "hyprcursor-build/recolored_svgs/" + theme_name
-                    os.system("mkdir -p " + output)
-                    colors = []
-                    color_1_match = lines[i+4].replace("{ \"match\": \"", "").split("\", \"replace\": \"")[0].strip()
-                    color_1_replace = lines[i+4].split("\", \"replace\": \"")[1].replace('" },\n', "")
-                    color_2_match = lines[i+5].replace("{ \"match\": \"", "").split("\", \"replace\": \"")[0].strip()
-                    color_2_replace = lines[i+5].split("\", \"replace\": \"")[1].replace('" },\n', "")
-                    color_3_match = lines[i+6].replace("{ \"match\": \"", "").split("\", \"replace\": \"")[0].strip()
-                    color_3_replace = lines[i+6].split("\", \"replace\": \"")[1].replace('" },\n', "")
-                    colors.append((color_1_match, color_1_replace))
-                    colors.append((color_2_match, color_2_replace))
-                    colors.append((color_3_match, color_3_replace))
-                    renderers.append(Renderer(svgs_dir, output, theme_name, colors))
+        data = json.load(f)
+        for theme in data:
+            if not theme.endswith("-Right"):
+                    
+                theme_name = theme
+                svgs_dir = data[theme]["dir"]
+                output = "hyprcursor-build/recolored_svgs/" + theme_name
+                os.system("mkdir -p " + output)
+                colors = []
+                for color in data[theme]["colors"]:
+                    colors.append((color["match"], color["replace"]))
+                renderers.append(Renderer(svgs_dir, output, theme_name, colors))
+        
+        f.close()
+
 
     for renderer in renderers:
         for root, dirsn, filesn in os.walk(renderer.input_folder):
