@@ -1,12 +1,3 @@
-# Hyprcursor roadmap
-
-- [x] extract themes
-- [x] recolor svgs
-- [x] remove old png files
-- [x] edit mate.hl files to use svg
-- [x] compress the theme
-
-
 ### How it works?
 
 new files:
@@ -49,8 +40,22 @@ Again replace Bibata-Modern-Ice with the name of the theme you downloaded and 24
 You can change the name of the cursor if it conlicts with another cursor theme by changing the name of the folder and the "name" variable on the manifest.hl file.
 
 
+### Building hyprcursors
 
+#### Dependencies:
+-   Python 3.7 or higher
+-   [clickgen](https://github.com/ful1e5/clickgen)>=2.1.8 (`pip install clickgen`)
+-   [yarn](https://github.com/yarnpkg/yarn)
+-   [hyprcursor](https://github.com/hyprwm/hyprcursor)
 
+#### Building: 
+1.  Clone the repo 
+3. `cd Bibata_Cursor`
+4. `yarn install`
+5. `yarn generate`
+
+On the bin folder it should have generated all the themes
+Hyprcursr themes are named as `hypr_<theme_name>.tar.gz`
 
 
 ---
