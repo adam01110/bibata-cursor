@@ -45,15 +45,15 @@ gen_symlinks(
 )
 
 # Linking Bibata Modern Right
-gen_symlinks(
-    [
-        "groups/modern-right",
-        "groups/modern-arrow",
-        "groups/shared",
-        "groups/hand-right",
-    ],
-    "modern-right",
-)
+# gen_symlinks(
+#     [
+#         "groups/modern-right",
+#         "groups/modern-arrow",
+#         "groups/shared",
+#         "groups/hand-right",
+#     ],
+#     "modern-right",
+# )
 
 # Linking Bibata Original
 gen_symlinks(
@@ -67,12 +67,12 @@ gen_symlinks(
 )
 
 # Linking Bibata Original Right
-gen_symlinks(
-    [
-        "groups/original-right",
-        "groups/original-arrow",
-        "groups/shared",
-        "groups/hand-right",
-    ],
-    "original-right",
-)
+# gen_symlinks(
+#     [
+#         "groups/original-right",
+#         "groups/original-arrow",
+#         "groups/shared",
+#         "groups/hand-right",
+#     ],
+#     "original-right",
+# )

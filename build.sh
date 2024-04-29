@@ -31,17 +31,17 @@ fi
 
 declare -A names
 names["Bibata-Modern-Amber"]=$(with_version "Yellowish and rounded edge Bibata cursors")
-names["Bibata-Modern-Amber-Right"]=$(with_version "Yellowish and rounded edge right-hand Bibata cursors")
+# names["Bibata-Modern-Amber-Right"]=$(with_version "Yellowish and rounded edge right-hand Bibata cursors")
 names["Bibata-Modern-Classic"]=$(with_version "Black and rounded edge Bibata cursors")
-names["Bibata-Modern-Classic-Right"]=$(with_version "Black and rounded edge right-hand Bibata cursors")
+# names["Bibata-Modern-Classic-Right"]=$(with_version "Black and rounded edge right-hand Bibata cursors")
 names["Bibata-Modern-Ice"]=$(with_version "White and rounded edge Bibata cursors")
-names["Bibata-Modern-Ice-Right"]=$(with_version "White and rounded edge right-hand Bibata cursors")
+# names["Bibata-Modern-Ice-Right"]=$(with_version "White and rounded edge right-hand Bibata cursors")
 names["Bibata-Original-Amber"]=$(with_version "Yellowish and sharp edge Bibata cursors")
-names["Bibata-Original-Amber-Right"]=$(with_version "Yellowish and sharp edge right-hand Bibata cursors")
+# names["Bibata-Original-Amber-Right"]=$(with_version "Yellowish and sharp edge right-hand Bibata cursors")
 names["Bibata-Original-Classic"]=$(with_version "Black and sharp edge Bibata cursors")
-names["Bibata-Original-Classic-Right"]=$(with_version "Black and sharp edge right-hand Bibata cursors")
+# names["Bibata-Original-Classic-Right"]=$(with_version "Black and sharp edge right-hand Bibata cursors")
 names["Bibata-Original-Ice"]=$(with_version "White and sharp edge Bibata cursors")
-names["Bibata-Original-Ice-Right"]=$(with_version "White and sharp edge right-hand Bibata cursors")
+# names["Bibata-Original-Ice-Right"]=$(with_version "White and sharp edge right-hand Bibata cursors")
 
 # Cleanup old builds
 rm -rf themes bin
@@ -98,4 +98,4 @@ cd ..
 cp LICENSE bitmaps/
 zip -rv bin/bitmaps.zip bitmaps
 
-source ./hyprcursor-build.sh
+bash hyprcursor-build.sh
