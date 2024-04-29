@@ -22,7 +22,7 @@ def main():
                 f.write(line)
             else:
                 if line.startswith("name = Extracted Theme"):
-                    f.write("name = Hypr-" + theme_name + "\n")
+                    f.write("name = " + theme_name + "\n")
                 elif line.startswith("description = Automatically extracted with hyprcursor-util"):
                     f.write("description = " + desc + "\n")
 
