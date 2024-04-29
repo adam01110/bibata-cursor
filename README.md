@@ -22,6 +22,35 @@ new files:
   - generates new svg files with the desired colors in the hyprcursor-build directory
 
 
+### How to use it
+
+Download your favourite cursor from [Releases](https://github.com/LOSEARDES77/Bibata-Cursor-hyprcursor/releases/latest)
+
+Extract it and place it on `~/.local/share/icons/` so the 
+structure of that folder should be somethiing like this:
+```bash
+~/.local/share/icons/Bibata-Modern-Ice/
+    | - hyprcursors
+    \ - manifest.hl
+```
+Then on your hyprland.conf add
+```conf
+env = HYPRCURSOR_THEME,Bibata-Modern-Ice  # Replace Bibata-Modern-Ice with the name of the theme you dosnloaded
+env = HYPRCURSOR_SIZE,24                  # Replace 24 with your desired size
+```
+
+Reload your hyprland session so it reload your env variables
+and you should see your new cursor theme.
+
+If this doesn't work, try running `hyprctl setcursor Bibata-Modern-Ice 24` on your terminal.
+Again replace Bibata-Modern-Ice with the name of the theme you downloaded and 24 with your desired size.
+
+#### Tip:
+You can change the name of the cursor if it conlicts with another cursor theme by changing the name of the folder and the "name" variable on the manifest.hl file.
+
+
+
+
 
 
 ---
