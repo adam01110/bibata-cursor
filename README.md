@@ -49,8 +49,8 @@ You can change the name of the cursor if it conlicts with another cursor theme b
 -   [hyprcursor](https://github.com/hyprwm/hyprcursor)
 
 #### Building: 
-1.  Clone the repo 
-3. `cd Bibata_Cursor`
+1.  `https://github.com/LOSEARDES77/Bibata-Cursor-hyprcursor.git`
+3. `cd Bibata-Cursor-hyprcursor`
 4. `yarn install`
 5. `yarn generate`
 
