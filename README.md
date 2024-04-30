@@ -30,7 +30,7 @@ env = HYPRCURSOR_THEME,Bibata-Modern-Ice  # Replace Bibata-Modern-Ice with the n
 env = HYPRCURSOR_SIZE,24                  # Replace 24 with your desired size
 ```
 
-Reload your hyprland session so it reload your env variables
+Reload your hyprland session so it reloads your env variables
 and you should see your new cursor theme.
 
 If this doesn't work, try running `hyprctl setcursor Bibata-Modern-Ice 24` on your terminal.
