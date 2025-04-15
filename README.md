@@ -26,7 +26,7 @@ structure of that folder should be somethiing like this:
 ```
 Then on your hyprland.conf add
 ```conf
-env = HYPRCURSOR_THEME,Bibata-Modern-Ice  # Replace Bibata-Modern-Ice with the name of the theme you dosnloaded
+env = HYPRCURSOR_THEME,Bibata-Modern-Ice  # Replace Bibata-Modern-Ice with the name of the theme you downloaded
 env = HYPRCURSOR_SIZE,24                  # Replace 24 with your desired size
 ```
 
