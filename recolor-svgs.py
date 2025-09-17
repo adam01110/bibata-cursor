@@ -1,5 +1,5 @@
-import os
 import json
+import os
 
 
 class Renderer:
@@ -14,7 +14,6 @@ class Renderer:
         self.output_folder = output_folder
         self.colors = colors
 
-
 def main():
     render_file = "render.json"
     renderers = []
@@ -23,7 +22,7 @@ def main():
         data = json.load(f)
         for theme in data:
             if not theme.endswith("-Right"):
-                    
+
                 theme_name = theme
                 svgs_dir = data[theme]["dir"]
                 output = "hyprcursor-build/recolored_svgs/" + theme_name
@@ -32,7 +31,7 @@ def main():
                 for color in data[theme]["colors"]:
                     colors.append((color["match"], color["replace"]))
                 renderers.append(Renderer(svgs_dir, output, theme_name, colors))
-        
+
         f.close()
 
 
@@ -66,10 +65,6 @@ def main():
                             content = content.replace(color[0], color[1])
                         with open(os.path.join(renderer.output_folder + "/left_ptr_watch", file), "w") as f:
                             f.write(content)
-            
-    
-            
-
 
 if __name__ == "__main__":
     main()

@@ -10,13 +10,11 @@ def main():
         f.seek(0)
         f.truncate()
         desc = "Hyprcursor version of bibata. "
-        shape = "rounded" if theme_name.split("-")[1] == "Modern" else "sharp"
-        if theme_name.endswith("-Amber"):
-            desc += "Yellowish and " + shape + " edge Bibata cursors"
-        elif theme_name.endswith("-Ice"):
-            desc += "White and " + shape + " edge Bibata cursors"
-        elif theme_name.endswith("-Classic"):
-            desc += "Black and " + shape + " edge Bibata cursors"
+        shape = "Modern" if theme_name.split("-")[1] == "Modern" else "Original"
+        if theme_name.endswith("-Classic"):
+            desc += "Black and " + shape + " Bibata cursors"
+        elif theme_name.endswith("-RosePine"):
+            desc += "Rose Pine and " + shape + " Bibata cursors"
         for line in content:
             if not line.startswith("name = Extracted Theme") and not line.startswith("description = Automatically extracted with hyprcursor-util"):
                 f.write(line)
@@ -25,7 +23,6 @@ def main():
                     f.write("name = " + theme_name + "\n")
                 elif line.startswith("description = Automatically extracted with hyprcursor-util"):
                     f.write("description = " + desc + "\n")
-
 
 if __name__ == '__main__':
     main()

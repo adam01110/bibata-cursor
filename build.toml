@@ -5,8 +5,8 @@ website = 'https://www.bibata.live'
 
 [config]
 bitmaps_dir = '' # This config will assigned with `ctgen -d <path>`
-out_dir = 'themes'
-platforms = ['x11', 'windows']
+out_dir = 'bin'
+platforms = ['x11']
 
 [cursors]
 [cursors.fallback_settings]

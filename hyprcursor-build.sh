@@ -1,10 +1,10 @@
-# !/bin/bash
+#!/usr/bin/env bash
 
 rm -rf hyprcursor-build
 
 mkdir -p hyprcursor-build
 
-for theme in $(find ./themes -maxdepth 1 -type d | grep "Bibata-*"); do
+for theme in $(find ./bin -maxdepth 1 -type d | grep "Bibata-*"); do
   hyprcursor-util --extract "$theme" --output "hyprcursor-build"
 done
 
@@ -47,15 +47,9 @@ for theme in $(find ./hyprcursor-build/ -maxdepth 1 -type d | grep "extracted_Bi
   hyprcursor-util --create "$theme" --output "hyprcursor-build"
 done
 
-cd hyprcursor-build
-for compressed_theme in $(find . -maxdepth 1 -type d | grep "theme_Bibata-*"); do
-  echo "Compressing $compressed_theme"
-  cd "$compressed_theme"
-  tar -czf "hypr_$(basename "$compressed_theme"| cut -d'_' -f2).tar.gz" .
-  cd ..
+for theme_dir in $(find ./hyprcursor-build -maxdepth 1 -type d | grep "theme_Bibata-*"); do
+  theme_base_name=$(basename "$theme_dir" | cut -d'_' -f2)
+  new_name="${theme_base_name}-hyprcursor"
+  echo "Moving $theme_dir to bin/$new_name"
+  cp -rf "$theme_dir" "bin/$new_name"
 done
-cd ..
-
-
-
-mv hyprcursor-build/*/*.tar.gz bin/
