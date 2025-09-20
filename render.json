@@ -7,5 +7,23 @@
 			{ "match": "#0000FF", "replace": "#FFFFFF" },
 			{ "match": "#FF0000", "replace": "#000000" }
 		]
+	},
+	"Bibata-Modern-RosePine": {
+		"dir": "svg/modern",
+		"out": "bitmaps/Bibata-Modern-RosePine",
+		"colors": [
+			{ "match": "#00FF00", "replace": "#26233a" },
+			{ "match": "#0000FF", "replace": "#21202e" },
+			{ "match": "#FF0000", "replace": "#191724" }
+		]
+	},
+	"Bibata-Modern-Gruvbox": {
+		"dir": "svg/modern",
+		"out": "bitmaps/Bibata-Modern-Gruvbox",
+		"colors": [
+			{ "match": "#00FF00", "replace": "#504945" },
+			{ "match": "#0000FF", "replace": "#fbf1c7" },
+			{ "match": "#FF0000", "replace": "#282828" }
+		]
 	}
 }

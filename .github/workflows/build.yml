@@ -1,0 +1,51 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Installing Node Dependencies
+        run: |
+          rm -rf node_modules yarn.lock
+          yarn install --frozen-lockfile
+        continue-on-error: false
+
+      - name: Render bitmaps
+        run: yarn render
+
+      - name: Print clickgen Version
+        run: |
+          clickgen --version
+          ctgen --version
+
+      - name: Package bitmaps (zip each subfolder)
+        run: |
+          set -euxo pipefail
+          shopt -s nullglob
+          mkdir dist
+          for dir in bitmaps/*; do
+            name="$(basename "$dir")"
+            (cd bitmaps && zip -r "../dist/${name}.zip" "$name")
+          done
+
+      - name: Upload assets to Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*.zip

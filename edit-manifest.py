@@ -15,6 +15,8 @@ def main():
             desc += "Black and " + shape + " Bibata cursors"
         elif theme_name.endswith("-RosePine"):
             desc += "Rose Pine and " + shape + " Bibata cursors"
+        elif theme_name.endswith("-Gruvbox"):
+            desc += "Gruvbox and " + shape + " Bibata cursors"
         for line in content:
             if not line.startswith("name = Extracted Theme") and not line.startswith("description = Automatically extracted with hyprcursor-util"):
                 f.write(line)
