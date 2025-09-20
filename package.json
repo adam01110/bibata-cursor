@@ -5,6 +5,7 @@
 	},
 	"scripts": {
 		"clean": "rm -rf bin bitmaps hyprcursor-build dist",
-		"render": "npx cbmp render.json"
+		"render": "cbmp render.json",
+		"generate": "cbmp render.json"
 	}
 }

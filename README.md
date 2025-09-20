@@ -45,14 +45,15 @@ You can change the name of the cursor if it conlicts with another cursor theme b
 #### Dependencies:
 -   Python 3.7 or higher
 -   [clickgen](https://github.com/ful1e5/clickgen)>=2.1.8 (`pip install clickgen`)
--   [yarn](https://github.com/yarnpkg/yarn)
+-   Node.js
+-   [pnpm](https://pnpm.io)
 -   [hyprcursor](https://github.com/hyprwm/hyprcursor)
 
 #### Building: 
 1.  `https://github.com/LOSEARDES77/Bibata-Cursor-hyprcursor.git`
 3. `cd Bibata-Cursor-hyprcursor`
-4. `yarn install`
-5. `yarn generate`
+4. `pnpm install`
+5. `pnpm run generate`
 
 On the bin folder it should have generated all the themes
 Hyprcursr themes are named as `hypr_<theme_name>.tar.gz`
@@ -269,15 +270,16 @@ Run the `uninstall.bat` script packed with the `.zip` archive
 
 -   Python version 3.7 or higher
 -   [clickgen](https://github.com/ful1e5/clickgen)>=2.1.8 (`pip install clickgen`)
--   [yarn](https://github.com/yarnpkg/yarn)
+-   Node.js
+-   [pnpm](https://pnpm.io)
 
 ### Quick start
 
 1. Install [build prerequisites](#prerequisites) on your system
 2. `git clone https://github.com/ful1e5/Bibata_Cursor`
 3. `cd Bibata_Cursor`
-4. `yarn install`
-5. `yarn generate`
+4. `pnpm install`
+5. `pnpm run generate`
 6. See [Installing Bibata Cursor](#installing-bibata-cursor).
 
 ### Getting Started

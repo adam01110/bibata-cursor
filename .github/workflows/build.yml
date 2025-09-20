@@ -16,24 +16,24 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
-      - name: Set up Node.js
+      - name: Set up node
         uses: actions/setup-node@v4
         with:
           node-version: 24
 
+      - name: set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
       - name: Installing Node Dependencies
         run: |
-          rm -rf node_modules yarn.lock
-          yarn install --frozen-lockfile
+          rm -rf node_modules
+          pnpm install
         continue-on-error: false
 
       - name: Render bitmaps
-        run: yarn render
-
-      - name: Print clickgen Version
-        run: |
-          clickgen --version
-          ctgen --version
+        run: pnpm run render
 
       - name: Package bitmaps (zip each subfolder)
         run: |
