@@ -10,7 +10,7 @@ platforms = ['x11']
 
 [cursors]
 [cursors.fallback_settings]
-x11_sizes = [16, 20, 22, 24, 28, 32, 40, 48, 56, 64, 72, 80, 88, 96]
+x11_sizes = [8 12 16 20 22 24 28 32 40 48 56 64 72 80 88 96 128 192 256]
 win_sizes = [24]
 x_hotspot = 128
 y_hotspot = 128
