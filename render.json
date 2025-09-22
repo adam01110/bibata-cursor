@@ -13,7 +13,7 @@
 		"out": "bitmaps/Bibata-Modern-RosePine",
 		"colors": [
 			{ "match": "#00FF00", "replace": "#26233a" },
-			{ "match": "#0000FF", "replace": "#21202e" },
+			{ "match": "#0000FF", "replace": "#e0def4" },
 			{ "match": "#FF0000", "replace": "#191724" }
 		]
 	},
