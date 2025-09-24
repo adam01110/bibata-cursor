@@ -17,7 +17,7 @@
 			{ "match": "#FF0000", "replace": "#191724" }
 		]
 	},
-	"Bibata-Modern-Gruvbox": {
+	"Bibata-Modern-Gruvbox-Dark": {
 		"dir": "svg/modern",
 		"out": "bitmaps/Bibata-Modern-Gruvbox-Dark",
 		"colors": [
