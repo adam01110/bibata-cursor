@@ -8,7 +8,7 @@
 			{ "match": "#FF0000", "replace": "#000000" }
 		]
 	},
-	"Bibata-Modern-RosePine": {
+	"Bibata-Modern-Rosepine": {
 		"dir": "svg/modern",
 		"out": "bitmaps/Bibata-Modern-Rosepine",
 		"colors": [
