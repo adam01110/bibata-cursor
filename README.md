@@ -90,10 +90,9 @@
   [Building](#building) - [Packaging](#packaging) - [Layout](#layout) - [Credits](#credits)
 </div>
 
-I keep this fork because I want a small set of Bibata variants that match the
-rest of my setup, while keeping the cursor sources reusable for XCursor and
-Hyprcursor packages. The release workflow renders the color variants once, and
-my NUR packages turn those bitmap archives into the final cursor themes.
+I created this fork to support themed versions of Bibata Cursor in Nix
+packages. It provides the rendered bitmap sources used to build matching
+XCursor and Hyprcursor themes.
 
 The repository is a fork of
 [`LOSEARDES77/Bibata-Cursor-hyprcursor`](https://github.com/LOSEARDES77/Bibata-Cursor-hyprcursor),
@@ -124,38 +123,22 @@ which is itself a fork of the original
 | Catppuccin Macchiato | `#24273A` | `#CAD3F5` | `#1E2030` |
 | Catppuccin Mocha | `#1E1E2E` | `#CDD6F4` | `#181825` |
 
-Each palette is rendered with all four source layouts: Modern, Modern Right,
-Original, and Original Right. Right-handed theme names use a trailing `-Right`,
-for example `Bibata-Original-Catppuccin-Mocha-Right`.
-
 ## Usage
 
 Rendered PNG archives are available from
 [GitHub Releases](https://github.com/adam01110/bibata-cursor/releases/latest).
 They are build inputs rather than directly installable cursor themes.
 
-The finished Gruvbox Dark XCursor and Hyprcursor packages are available from my
-[NUR repository](https://github.com/adam01110/nur). Add it as a flake input:
+The finished Gruvbox Dark XCursor and Hyprcursor packages are published through
+my [NUR repository](https://github.com/adam01110/nur). Follow the
+[NUR installation guide](https://github.com/nix-community/NUR#installation),
+then install both packages for combined XCursor and Hyprcursor support:
 
 ```nix
 {
-  inputs.adam0-nur.url = "github:adam01110/nur";
-}
-```
-
-Then select either package for the current system:
-
-```nix
-{
-  inputs,
-  pkgs,
-  ...
-}: let
-  nurPkgs = inputs.adam0-nur.packages.${pkgs.stdenv.hostPlatform.system};
-in {
-  home.packages = [
-    nurPkgs.bibata-modern-cursors-gruvbox-dark
-    nurPkgs.bibata-modern-cursors-gruvbox-dark-hyprcursor
+  home.packages = with pkgs.nur.repos.adam0; [
+    bibata-modern-cursors-gruvbox-dark
+    bibata-modern-cursors-gruvbox-dark-hyprcursor
   ];
 }
 ```
