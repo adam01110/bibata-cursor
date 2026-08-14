@@ -1,9 +1,77 @@
 <!-- rumdl-disable MD023 MD033 MD041 -->
 
 <div align="center">
-  <img src="./assets/modern-classic.png" alt="Bibata Modern Classic" width="96" />
-  <img src="./assets/modern-rosepine.png" alt="Bibata Modern Rosé Pine" width="96" />
-  <img src="./assets/modern-gruvbox-dark.png" alt="Bibata Modern Gruvbox Dark" width="96" />
+  <table>
+    <thead>
+      <tr>
+        <th>Layout</th>
+        <th>Classic</th>
+        <th>Rosé Pine</th>
+        <th>Rosé Pine<br />Moon</th>
+        <th>Rosé Pine<br />Dawn</th>
+        <th>Gruvbox<br />Dark</th>
+        <th>Gruvbox<br />Light</th>
+        <th>Catppuccin<br />Latte</th>
+        <th>Catppuccin<br />Frappé</th>
+        <th>Catppuccin<br />Macchiato</th>
+        <th>Catppuccin<br />Mocha</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Modern</th>
+        <td><img src="./assets/modern-classic.png" alt="Modern Classic" width="32" /></td>
+        <td><img src="./assets/modern-rosepine.png" alt="Modern Rosé Pine" width="32" /></td>
+        <td><img src="./assets/modern-rosepine-moon.png" alt="Modern Rosé Pine Moon" width="32" /></td>
+        <td><img src="./assets/modern-rosepine-dawn.png" alt="Modern Rosé Pine Dawn" width="32" /></td>
+        <td><img src="./assets/modern-gruvbox-dark.png" alt="Modern Gruvbox Dark" width="32" /></td>
+        <td><img src="./assets/modern-gruvbox-light.png" alt="Modern Gruvbox Light" width="32" /></td>
+        <td><img src="./assets/modern-catppuccin-latte.png" alt="Modern Catppuccin Latte" width="32" /></td>
+        <td><img src="./assets/modern-catppuccin-frappe.png" alt="Modern Catppuccin Frappé" width="32" /></td>
+        <td><img src="./assets/modern-catppuccin-macchiato.png" alt="Modern Catppuccin Macchiato" width="32" /></td>
+        <td><img src="./assets/modern-catppuccin-mocha.png" alt="Modern Catppuccin Mocha" width="32" /></td>
+      </tr>
+      <tr>
+        <th>Modern Right</th>
+        <td><img src="./assets/modern-right-classic.png" alt="Modern Right Classic" width="32" /></td>
+        <td><img src="./assets/modern-right-rosepine.png" alt="Modern Right Rosé Pine" width="32" /></td>
+        <td><img src="./assets/modern-right-rosepine-moon.png" alt="Modern Right Rosé Pine Moon" width="32" /></td>
+        <td><img src="./assets/modern-right-rosepine-dawn.png" alt="Modern Right Rosé Pine Dawn" width="32" /></td>
+        <td><img src="./assets/modern-right-gruvbox-dark.png" alt="Modern Right Gruvbox Dark" width="32" /></td>
+        <td><img src="./assets/modern-right-gruvbox-light.png" alt="Modern Right Gruvbox Light" width="32" /></td>
+        <td><img src="./assets/modern-right-catppuccin-latte.png" alt="Modern Right Catppuccin Latte" width="32" /></td>
+        <td><img src="./assets/modern-right-catppuccin-frappe.png" alt="Modern Right Catppuccin Frappé" width="32" /></td>
+        <td><img src="./assets/modern-right-catppuccin-macchiato.png" alt="Modern Right Catppuccin Macchiato" width="32" /></td>
+        <td><img src="./assets/modern-right-catppuccin-mocha.png" alt="Modern Right Catppuccin Mocha" width="32" /></td>
+      </tr>
+      <tr>
+        <th>Original</th>
+        <td><img src="./assets/original-classic.png" alt="Original Classic" width="32" /></td>
+        <td><img src="./assets/original-rosepine.png" alt="Original Rosé Pine" width="32" /></td>
+        <td><img src="./assets/original-rosepine-moon.png" alt="Original Rosé Pine Moon" width="32" /></td>
+        <td><img src="./assets/original-rosepine-dawn.png" alt="Original Rosé Pine Dawn" width="32" /></td>
+        <td><img src="./assets/original-gruvbox-dark.png" alt="Original Gruvbox Dark" width="32" /></td>
+        <td><img src="./assets/original-gruvbox-light.png" alt="Original Gruvbox Light" width="32" /></td>
+        <td><img src="./assets/original-catppuccin-latte.png" alt="Original Catppuccin Latte" width="32" /></td>
+        <td><img src="./assets/original-catppuccin-frappe.png" alt="Original Catppuccin Frappé" width="32" /></td>
+        <td><img src="./assets/original-catppuccin-macchiato.png" alt="Original Catppuccin Macchiato" width="32" /></td>
+        <td><img src="./assets/original-catppuccin-mocha.png" alt="Original Catppuccin Mocha" width="32" /></td>
+      </tr>
+      <tr>
+        <th>Original Right</th>
+        <td><img src="./assets/original-right-classic.png" alt="Original Right Classic" width="32" /></td>
+        <td><img src="./assets/original-right-rosepine.png" alt="Original Right Rosé Pine" width="32" /></td>
+        <td><img src="./assets/original-right-rosepine-moon.png" alt="Original Right Rosé Pine Moon" width="32" /></td>
+        <td><img src="./assets/original-right-rosepine-dawn.png" alt="Original Right Rosé Pine Dawn" width="32" /></td>
+        <td><img src="./assets/original-right-gruvbox-dark.png" alt="Original Right Gruvbox Dark" width="32" /></td>
+        <td><img src="./assets/original-right-gruvbox-light.png" alt="Original Right Gruvbox Light" width="32" /></td>
+        <td><img src="./assets/original-right-catppuccin-latte.png" alt="Original Right Catppuccin Latte" width="32" /></td>
+        <td><img src="./assets/original-right-catppuccin-frappe.png" alt="Original Right Catppuccin Frappé" width="32" /></td>
+        <td><img src="./assets/original-right-catppuccin-macchiato.png" alt="Original Right Catppuccin Macchiato" width="32" /></td>
+        <td><img src="./assets/original-right-catppuccin-mocha.png" alt="Original Right Catppuccin Mocha" width="32" /></td>
+      </tr>
+    </tbody>
+  </table>
 
 # Bibata Cursor
 
@@ -37,20 +105,28 @@ which is itself a fork of the original
 - Renders reproducible Bibata bitmap sets from the original SVG sources.
 - Keeps Modern, Modern Right, Original, and Original Right source layouts.
 - Publishes each configured color variant as a separate release archive.
-- Provides the `ctgen` and Hyprcursor conversion files used by my NUR packages.
+- Provides handedness-aware `ctgen` and Hyprcursor conversion files used by my
+  NUR packages.
 - Includes a Nix development shell and treefmt checks for repository tooling.
 
 ## Variants
 
-| Variant | Base | Outline | Activity |
+| Palette | Base | Outline | Activity |
 | --- | --- | --- | --- |
-| Bibata Modern Classic | `#000000` | `#FFFFFF` | `#000000` |
-| Bibata Modern Rosé Pine | `#26233A` | `#E0DEF4` | `#191724` |
-| Bibata Modern Gruvbox Dark | `#504945` | `#FBF1C7` | `#282828` |
+| Classic | `#000000` | `#FFFFFF` | `#000000` |
+| Rosé Pine | `#26233A` | `#E0DEF4` | `#191724` |
+| Rosé Pine Moon | `#393552` | `#E0DEF4` | `#232136` |
+| Rosé Pine Dawn | `#F2E9E1` | `#464261` | `#FAF4ED` |
+| Gruvbox Dark | `#504945` | `#FBF1C7` | `#282828` |
+| Gruvbox Light | `#D5C4A1` | `#282828` | `#FBF1C7` |
+| Catppuccin Latte | `#EFF1F5` | `#4C4F69` | `#E6E9EF` |
+| Catppuccin Frappé | `#303446` | `#C6D0F5` | `#292C3C` |
+| Catppuccin Macchiato | `#24273A` | `#CAD3F5` | `#1E2030` |
+| Catppuccin Mocha | `#1E1E2E` | `#CDD6F4` | `#181825` |
 
-The SVG source tree also contains the Original and right-handed layouts so more
-combinations can be added without importing the artwork again. The current
-[`render.json`](render.json) only generates the three Modern variants above.
+Each palette is rendered with all four source layouts: Modern, Modern Right,
+Original, and Original Right. Right-handed theme names use a trailing `-Right`,
+for example `Bibata-Original-Catppuccin-Mocha-Right`.
 
 ## Usage
 
@@ -93,7 +169,7 @@ nix develop
 bun install --frozen-lockfile
 ```
 
-Render every variant configured in `render.json`:
+Render every palette and layout combination configured in `render.json`:
 
 ```bash
 bun run generate
@@ -103,7 +179,8 @@ The generated PNG assets are written to `bitmaps/<variant>`.
 
 To change or add a color variant, add another entry to `render.json`. Each color
 mapping replaces the source SVG's base, outline, or activity color during
-rendering.
+rendering. Keep entries for all four layouts when a palette should be available
+across the complete cursor set.
 
 The source layout symlinks can be regenerated after changing files under
 `svg/groups`:
@@ -126,6 +203,11 @@ ctgen build.toml \
   -c "Gruvbox dark Bibata modern XCursors"
 ```
 
+Use [`build.right.toml`](build.right.toml) instead when packaging a theme whose
+name ends in `-Right`. It contains the right-handed hotspots required by the
+mirrored pointer artwork; using `build.toml` would produce incorrect click
+positions.
+
 The Hyprcursor package then converts the generated theme:
 
 ```bash
@@ -144,7 +226,8 @@ build interface and should remain in sync with the source and manifest naming.
 | `svg/modern*/` | Modern source layouts assembled from grouped SVG symlinks |
 | `svg/original*/` | Original source layouts assembled from grouped SVG symlinks |
 | `render.json` | Color variants rendered by `cbmp` |
-| `build.toml` | Cursor names, hotspots, sizes, and `ctgen` build settings |
+| `build.toml` | Left-handed cursor names, hotspots, sizes, and `ctgen` settings |
+| `build.right.toml` | Corresponding right-handed `ctgen` settings and hotspots |
 | `scripts/` | SVG layout, recoloring, metadata, and Hyprcursor build utilities |
 | `nix/` | Development shell and treefmt flake modules |
 | `.github/workflows/build.yml` | Release rendering and archive upload workflow |

@@ -1,70 +1,41 @@
+#!/usr/bin/env python3
+
 import json
-import os
+from pathlib import Path
 
 
-class Renderer:
-    theme_name = None
-    input_folder = None
-    output_folder = None
-    colors = []
-
-    def __init__(self, input_folder, output_folder, theme_name, colors):
-        self.theme_name = theme_name
-        self.input_folder = input_folder
-        self.output_folder = output_folder
-        self.colors = colors
-
-def main():
-    render_file = "render.json"
-    renderers = []
-
-    with open(render_file, "r") as f:
-        data = json.load(f)
-        for theme in data:
-            if not theme.endswith("-Right"):
-
-                theme_name = theme
-                svgs_dir = data[theme]["dir"]
-                output = "hyprcursor-build/recolored_svgs/" + theme_name
-                os.system("mkdir -p " + output)
-                colors = []
-                for color in data[theme]["colors"]:
-                    colors.append((color["match"], color["replace"]))
-                renderers.append(Renderer(svgs_dir, output, theme_name, colors))
-
-        f.close()
+REPOSITORY_ROOT = Path(__file__).resolve().parent.parent
+RENDER_CONFIG = REPOSITORY_ROOT / "render.json"
+OUTPUT_ROOT = REPOSITORY_ROOT / "hyprcursor-build" / "recolored_svgs"
 
 
-    for renderer in renderers:
-        for root, dirsn, filesn in os.walk(renderer.input_folder):
-            for file in filesn:
-                if file.endswith(".svg"):
-                    with open(os.path.join(root, file), "r") as f:
-                        content = f.read()
-                        for color in renderer.colors:
-                            content = content.replace(color[0], color[1])
-                        with open(os.path.join(renderer.output_folder, file), "w") as f:
-                            f.write(content)
-        for root, dirsn, filesn in os.walk(renderer.input_folder + "/wait"):
-            for file in filesn:
-                if file.endswith(".svg"):
-                    os.system("mkdir -p " + renderer.output_folder + "/wait")
-                    with open(os.path.join(root, file), "r") as f:
-                        content = f.read()
-                        for color in renderer.colors:
-                            content = content.replace(color[0], color[1])
-                        with open(os.path.join(renderer.output_folder + "/wait", file), "w") as f:
-                            f.write(content)
-        for root, dirsn, filesn in os.walk(renderer.input_folder + "/left_ptr_watch"):
-            for file in filesn:
-                if file.endswith(".svg"):
-                    os.system("mkdir -p " + renderer.output_folder + "/left_ptr_watch")
-                    with open(os.path.join(root, file), "r") as f:
-                        content = f.read()
-                        for color in renderer.colors:
-                            content = content.replace(color[0], color[1])
-                        with open(os.path.join(renderer.output_folder + "/left_ptr_watch", file), "w") as f:
-                            f.write(content)
+def recolor_directory(
+    source_directory: Path,
+    output_directory: Path,
+    colors: list[tuple[str, str]],
+) -> None:
+    for source in source_directory.iterdir():
+        output = output_directory / source.name
+
+        if source.is_dir():
+            recolor_directory(source, output, colors)
+        elif source.suffix == ".svg":
+            output.parent.mkdir(parents=True, exist_ok=True)
+            content = source.read_text()
+            for source_color, output_color in colors:
+                content = content.replace(source_color, output_color)
+            output.write_text(content)
+
+
+def main() -> None:
+    renderers = json.loads(RENDER_CONFIG.read_text())
+
+    for theme_name, renderer in renderers.items():
+        source_directory = REPOSITORY_ROOT / renderer["dir"]
+        output_directory = OUTPUT_ROOT / theme_name
+        colors = [(color["match"], color["replace"]) for color in renderer["colors"]]
+        recolor_directory(source_directory, output_directory, colors)
+
 
 if __name__ == "__main__":
     main()
