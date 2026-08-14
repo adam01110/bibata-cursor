@@ -1,3 +1,4 @@
+import os.path
 import sys
 
 
@@ -19,9 +20,7 @@ def main():
                 for svg_file in svg_files:
                     for svg in svg_file.split("\n"):
                         content_to_write += (
-                            "define_size = 0, "
-                            + svg.split("/")[len(svg.split("/")) - 1]
-                            + "\n"
+                            "define_size = 0, " + os.path.basename(svg) + "\n"
                         )
                 f.write(content_to_write)
                 has_written = True

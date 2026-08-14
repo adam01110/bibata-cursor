@@ -2,9 +2,7 @@ when:
   - event: ["push"]
     tag: ["*"]
   - event: ["manual"]
-
 engine: "nixery"
-
 dependencies:
   nixpkgs/nixpkgs-unstable:
     - bun
@@ -14,17 +12,13 @@ dependencies:
     - jq
     - ouch
     - xxd
-
 environment:
   ATP_IDENTIFIER: "adam0.dev"
-
 steps:
   - name: "Install dependencies"
     command: bun install --frozen-lockfile
-
   - name: "Render bitmaps"
     command: bun run generate
-
   - name: "Package bitmaps"
     command: |
       set -euo pipefail
@@ -34,7 +28,6 @@ steps:
         name="$(basename "$dir")"
         (cd bitmaps && ouch compress "$name" "../dist/${name}.zip")
       done
-
   - name: "Publish release artifacts"
     command: |
       set -euo pipefail
