@@ -45,15 +45,14 @@ You can change the name of the cursor if it conlicts with another cursor theme b
 #### Dependencies:
 -   Python 3.7 or higher
 -   [clickgen](https://github.com/ful1e5/clickgen)>=2.1.8 (`pip install clickgen`)
--   Node.js
--   [pnpm](https://pnpm.io)
+-   [Bun](https://bun.sh)
 -   [hyprcursor](https://github.com/hyprwm/hyprcursor)
 
 #### Building: 
 1.  `https://github.com/LOSEARDES77/Bibata-Cursor-hyprcursor.git`
 3. `cd Bibata-Cursor-hyprcursor`
-4. `pnpm install`
-5. `pnpm run generate`
+4. `bun install`
+5. `bun run generate`
 
 On the bin folder it should have generated all the themes
 Hyprcursr themes are named as `hypr_<theme_name>.tar.gz`
@@ -270,16 +269,15 @@ Run the `uninstall.bat` script packed with the `.zip` archive
 
 -   Python version 3.7 or higher
 -   [clickgen](https://github.com/ful1e5/clickgen)>=2.1.8 (`pip install clickgen`)
--   Node.js
--   [pnpm](https://pnpm.io)
+-   [Bun](https://bun.sh)
 
 ### Quick start
 
 1. Install [build prerequisites](#prerequisites) on your system
 2. `git clone https://github.com/ful1e5/Bibata_Cursor`
 3. `cd Bibata_Cursor`
-4. `pnpm install`
-5. `pnpm run generate`
+4. `bun install`
+5. `bun run generate`
 6. See [Installing Bibata Cursor](#installing-bibata-cursor).
 
 ### Getting Started
@@ -313,13 +311,13 @@ The process of creating custom cursor themes involves two main steps:
 3. `-wc` (optional): Watch Background color, which replaces the `#FF0000` color in the SVG.
 
 ```bash
-npx cbmp [...] -bc '<hex>' -oc '<hex>' -wc '<hex>'
+bunx cbmp [...] -bc '<hex>' -oc '<hex>' -wc '<hex>'
 ```
 
 Alternatively, you can provide a JSON configuration file to render SVG files, which contains a sequence of `cbmp` commands:
 
 ```bash
-npx cbmp render.json
+bunx cbmp render.json
 ```
 
 #### Customize Sizes
@@ -357,7 +355,7 @@ ctgen build.toml -s 16 18 24 32 -p x11 -d 'bitmaps/Bibata-Modern-Ice' -n 'Bibata
 Lets generate Bibata-Modern with green and black colors:
 
 ```bash
-npx cbmp -d 'svg/modern' -o 'bitmaps/Bibata-Hacker' -bc '#00FE00' -oc '#000000'
+bunx cbmp -d 'svg/modern' -o 'bitmaps/Bibata-Hacker' -bc '#00FE00' -oc '#000000'
 ```
 
 After rendering custom color you have to build cursor through `ctgen`:
@@ -371,28 +369,28 @@ Afterwards, Generated theme can be found in the `themes` directory.
 ###### Bibata Gruvbox
 
 ```bash
-npx cbmp -d 'svg/original' -o 'bitmaps/Bibata-Gruvbox' -bc '#282828' -oc '#EBDBB2' -wc '#000000'
+bunx cbmp -d 'svg/original' -o 'bitmaps/Bibata-Gruvbox' -bc '#282828' -oc '#EBDBB2' -wc '#000000'
 ctgen build.toml -d 'bitmaps/Bibata-Gruvbox' -n 'Bibata-Gruvbox' -c 'Groovy Bibata cursors.'
 ```
 
 ###### Bibata Solarized Dark
 
 ```bash
-npx cbmp -d 'svg/original' -o 'bitmaps/Bibata-Solarized-Dark' -bc '#002b36' -oc '#839496' -wc '#000000'
+bunx cbmp -d 'svg/original' -o 'bitmaps/Bibata-Solarized-Dark' -bc '#002b36' -oc '#839496' -wc '#000000'
 ctgen build.toml -d 'bitmaps/Bibata-Solarized-Dark' -n 'Bibata-Solarized-Dark' -c 'Solarized Dark Bibata cursors.'
 ```
 
 ###### Bibata Solarized Light
 
 ```bash
-npx cbmp -d 'svg/original' -o 'bitmaps/Bibata-Solarized-Light' -bc '#839496' -oc '#002b36'
+bunx cbmp -d 'svg/original' -o 'bitmaps/Bibata-Solarized-Light' -bc '#839496' -oc '#002b36'
 ctgen build.toml -d 'bitmaps/Bibata-Solarized-Light' -n 'Bibata-Solarized-Light' -c 'Solarized Light Bibata cursors.'
 ```
 
 ###### Bibata Dracula
 
 ```bash
-npx cbmp -d 'svg/original' -o 'bitmaas/Bibata-Dracula' -bc '#282a36' -oc '#f8f8f2'
+bunx cbmp -d 'svg/original' -o 'bitmaas/Bibata-Dracula' -bc '#282a36' -oc '#f8f8f2'
 ctgen build.toml -d 'bitmaps/Bibata-Dracula' -n 'Bibata-Dracula' -c 'Dracula Bibata cursors.'
 ```
 
