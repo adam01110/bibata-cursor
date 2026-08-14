@@ -1,11 +1,12 @@
 import sys
 
+
 def main():
     args = sys.argv[1:]
     metahl = args[0]
     svg_files = args[1:]
 
-    with open(metahl, 'r+') as f:
+    with open(metahl, "r+") as f:
         content = f.readlines()
         f.seek(0)
         f.truncate()
@@ -17,9 +18,14 @@ def main():
                 content_to_write = ""
                 for svg_file in svg_files:
                     for svg in svg_file.split("\n"):
-                        content_to_write += "define_size = 0, " + svg.split("/")[len(svg.split("/")) - 1] + "\n"
+                        content_to_write += (
+                            "define_size = 0, "
+                            + svg.split("/")[len(svg.split("/")) - 1]
+                            + "\n"
+                        )
                 f.write(content_to_write)
                 has_written = True
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
