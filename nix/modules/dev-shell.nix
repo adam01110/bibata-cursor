@@ -1,7 +1,11 @@
 {
   perSystem = {pkgs, ...}: {
-    devShells.default = pkgs.mkShellNoCC {
-      packages = [pkgs.bun];
-    };
+    devShells.default = with pkgs;
+      mkShellNoCC {
+        packages = [
+          bun
+          python3
+        ];
+      };
   };
 }
