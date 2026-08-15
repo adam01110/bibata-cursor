@@ -196,24 +196,6 @@ The Hyprcursor package then converts the generated theme:
 bash scripts/build-hyprcursor.sh
 ```
 
-The build script uses the Python helpers beside it to recolor SVGs and update
-Hyprcursor metadata during conversion. These files are part of the package
-build interface and should remain in sync with the source and manifest naming.
-
-## Layout
-
-| Path | Contents |
-| --- | --- |
-| `svg/groups/` | Canonical artwork grouped by shape and handedness |
-| `svg/modern*/` | Modern source layouts assembled from grouped SVG symlinks |
-| `svg/original*/` | Original source layouts assembled from grouped SVG symlinks |
-| `render.json` | Color variants rendered by `cbmp` |
-| `build.toml` | Left-handed cursor names, hotspots, sizes, and `ctgen` settings |
-| `build.right.toml` | Corresponding right-handed `ctgen` settings and hotspots |
-| `scripts/` | SVG layout, recoloring, metadata, and Hyprcursor build utilities |
-| `nix/` | Development shell and treefmt flake modules |
-| `.github/workflows/build.yml` | Release rendering and archive upload workflow |
-
 ## Credits
 
 - [Bibata Cursor](https://github.com/ful1e5/Bibata_Cursor), designed by
