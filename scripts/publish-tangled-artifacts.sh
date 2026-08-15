@@ -22,6 +22,14 @@ resolve_pds() {
   esac
 }
 
+resolve_repo_did() {
+  curl -fsSG "$pds/xrpc/com.atproto.repo.getRecord" \
+    --data-urlencode "repo=$did" \
+    --data-urlencode "collection=sh.tangled.repo" \
+    --data-urlencode "rkey=$TANGLED_REPO_NAME" | jq -er \
+    '.value.repoDid | select(startswith("did:"))'
+}
+
 publish_artifact() {
   local artifact_path=$1
   local artifact_name blob record
@@ -35,10 +43,10 @@ publish_artifact() {
     --arg did "$did" \
     --arg tag "$tag_bytes" \
     --arg name "$artifact_name" \
-    --arg repo "$TANGLED_REPO_URL" \
+    --arg repo_did "$repo_did" \
     --arg created "$(date -Iseconds)" \
     --argjson blob "$(jq .blob <<<"$blob")" \
-    '{repo: $did, collection: "sh.tangled.repo.artifact", validate: false, record: {"$type": "sh.tangled.repo.artifact", tag: {"$bytes": $tag}, name: $name, repo: $repo, artifact: $blob, createdAt: $created}}')
+    '{repo: $did, collection: "sh.tangled.repo.artifact", validate: false, record: {"$type": "sh.tangled.repo.artifact", tag: {"$bytes": $tag}, name: $name, repoDid: $repo_did, artifact: $blob, createdAt: $created}}')
   curl -fsS -X POST "$pds/xrpc/com.atproto.repo.createRecord" \
     -H "Authorization: Bearer $jwt" \
     -H "Content-Type: application/json" \
@@ -63,6 +71,7 @@ session=$(curl -fsS -X POST "$pds/xrpc/com.atproto.server.createSession" \
 jwt=$(jq -r .accessJwt <<<"$session")
 did=$(jq -r .did <<<"$session")
 [[ $did == "$resolved_did" ]]
+repo_did=$(resolve_repo_did)
 
 tag_hash=$(git rev-parse "$TANGLED_REF_NAME^{tag}")
 tag_bytes=$(printf '%s' "$tag_hash" | xxd -r -p | base64 | tr -d '=')
