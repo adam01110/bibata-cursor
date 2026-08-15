@@ -78,7 +78,6 @@
   Custom Bibata color variants and source layouts for my Nix cursor packages.
 
   [![Release](https://img.shields.io/github/v/release/adam01110/bibata-cursor?style=flat-square&label=Release&labelColor=504945&color=cc241d)](https://github.com/adam01110/bibata-cursor/releases/latest)
-  [![Build](https://img.shields.io/github/actions/workflow/status/adam01110/bibata-cursor/build.yml?branch=main&style=flat-square&label=Build&labelColor=504945&color=cc241d)](https://github.com/adam01110/bibata-cursor/actions/workflows/build.yml)
   [![Repo Size](https://img.shields.io/github/repo-size/adam01110/bibata-cursor?style=flat-square&label=repo%20size&labelColor=504945&color=3c3836)](https://github.com/adam01110/bibata-cursor)
   <br />
   [![Nix](https://img.shields.io/badge/Nix-flakes-689d6a?style=flat-square&labelColor=504945&logo=nixos&logoColor=ebdbb2)](https://nixos.wiki/wiki/Flakes)
