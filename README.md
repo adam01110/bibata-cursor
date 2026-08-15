@@ -77,7 +77,7 @@
 
   Custom Bibata color variants and source layouts for my Nix cursor packages.
 
-  [![Release](https://img.shields.io/github/v/release/adam01110/bibata-cursor?style=flat-square&label=Release&labelColor=504945&color=cc241d)](https://github.com/adam01110/bibata-cursor/releases/latest)
+  [![Tags](https://img.shields.io/badge/Tangled-tags-cc241d?style=flat-square&labelColor=504945)](https://tangled.org/did:plc:v3hmlmsytt6b2zvi3e35o2oj/bibata-cursor/tags)
   [![Repo Size](https://img.shields.io/github/repo-size/adam01110/bibata-cursor?style=flat-square&label=repo%20size&labelColor=504945&color=3c3836)](https://github.com/adam01110/bibata-cursor)
   <br />
   [![Nix](https://img.shields.io/badge/Nix-flakes-689d6a?style=flat-square&labelColor=504945&logo=nixos&logoColor=ebdbb2)](https://nixos.wiki/wiki/Flakes)
@@ -124,22 +124,29 @@ which is itself a fork of the original
 
 ## Usage
 
-Rendered PNG archives are available from
-[GitHub Releases](https://github.com/adam01110/bibata-cursor/releases/latest).
+Rendered PNG archives are available as
+[Tangled tag artifacts](https://tangled.org/did:plc:v3hmlmsytt6b2zvi3e35o2oj/bibata-cursor/tags).
 They are build inputs rather than directly installable cursor themes.
 
-The finished Gruvbox Dark XCursor and Hyprcursor packages are published through
-my [NUR repository](https://github.com/adam01110/nur). Follow the
+The finished XCursor and Hyprcursor themes are published through my
+[NUR repository](https://github.com/adam01110/nur). Follow the
 [NUR installation guide](https://github.com/nix-community/NUR#installation),
 then install both packages for combined XCursor and Hyprcursor support:
 
 ```nix
 {
   home.packages = with pkgs.nur.repos.adam0; [
-    bibata-modern-cursors-gruvbox-dark
-    bibata-modern-cursors-gruvbox-dark-hyprcursor
+    bibata.modern.cursors.gruvbox-dark
+    bibata.modern.cursors.gruvbox-dark.hyprcursor
   ];
 }
+```
+
+Packages follow this structure for every layout and palette:
+
+```nix
+bibata.<modern|modern-right|original|original-right>.cursors.<palette>
+bibata.<modern|modern-right|original|original-right>.cursors.<palette>.hyprcursor
 ```
 
 ## Building
