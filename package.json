@@ -3,11 +3,16 @@
   "scripts": {
     "build:hyprcursor": "bash scripts/build-hyprcursor.sh",
     "clean": "rm -rf bin bitmaps dist hyprcursor-build",
-    "generate": "cbmp render.json",
-    "link": "python3 scripts/link-svg-layouts.py"
+    "generate": "bun scripts/generate-bitmaps.ts",
+    "link": "python3 scripts/link-svg-layouts.py",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "cbmp": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.3.14",
+    "typescript": "^7.0.2"
   },
   "packageManager": "bun@1.3.13"
 }

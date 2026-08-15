@@ -4,15 +4,15 @@
     "out": "bitmaps/Bibata-Modern-Classic",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#000000"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#FFFFFF"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#000000"
       }
     ]
@@ -22,15 +22,15 @@
     "out": "bitmaps/Bibata-Modern-Rosepine",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#26233a"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#e0def4"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#191724"
       }
     ]
@@ -40,15 +40,15 @@
     "out": "bitmaps/Bibata-Modern-Rosepine-Moon",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#393552"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#e0def4"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#232136"
       }
     ]
@@ -58,15 +58,15 @@
     "out": "bitmaps/Bibata-Modern-Rosepine-Dawn",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#f2e9e1"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#464261"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#faf4ed"
       }
     ]
@@ -76,15 +76,15 @@
     "out": "bitmaps/Bibata-Modern-Gruvbox-Dark",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#504945"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#fbf1c7"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#282828"
       }
     ]
@@ -94,15 +94,15 @@
     "out": "bitmaps/Bibata-Modern-Gruvbox-Light",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#d5c4a1"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#282828"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#fbf1c7"
       }
     ]
@@ -112,15 +112,15 @@
     "out": "bitmaps/Bibata-Modern-Catppuccin-Latte",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#eff1f5"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#4c4f69"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#e6e9ef"
       }
     ]
@@ -130,15 +130,15 @@
     "out": "bitmaps/Bibata-Modern-Catppuccin-Frappe",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#303446"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#c6d0f5"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#292c3c"
       }
     ]
@@ -148,15 +148,15 @@
     "out": "bitmaps/Bibata-Modern-Catppuccin-Macchiato",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#24273a"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#cad3f5"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#1e2030"
       }
     ]
@@ -166,15 +166,15 @@
     "out": "bitmaps/Bibata-Modern-Catppuccin-Mocha",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#1e1e2e"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#cdd6f4"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#181825"
       }
     ]
@@ -184,15 +184,15 @@
     "out": "bitmaps/Bibata-Modern-Classic-Right",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#000000"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#FFFFFF"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#000000"
       }
     ]
@@ -202,15 +202,15 @@
     "out": "bitmaps/Bibata-Modern-Rosepine-Right",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#26233a"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#e0def4"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#191724"
       }
     ]
@@ -220,15 +220,15 @@
     "out": "bitmaps/Bibata-Modern-Rosepine-Moon-Right",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#393552"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#e0def4"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#232136"
       }
     ]
@@ -238,15 +238,15 @@
     "out": "bitmaps/Bibata-Modern-Rosepine-Dawn-Right",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#f2e9e1"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#464261"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#faf4ed"
       }
     ]
@@ -256,15 +256,15 @@
     "out": "bitmaps/Bibata-Modern-Gruvbox-Dark-Right",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#504945"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#fbf1c7"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#282828"
       }
     ]
@@ -274,15 +274,15 @@
     "out": "bitmaps/Bibata-Modern-Gruvbox-Light-Right",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#d5c4a1"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#282828"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#fbf1c7"
       }
     ]
@@ -292,15 +292,15 @@
     "out": "bitmaps/Bibata-Modern-Catppuccin-Latte-Right",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#eff1f5"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#4c4f69"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#e6e9ef"
       }
     ]
@@ -310,15 +310,15 @@
     "out": "bitmaps/Bibata-Modern-Catppuccin-Frappe-Right",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#303446"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#c6d0f5"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#292c3c"
       }
     ]
@@ -328,15 +328,15 @@
     "out": "bitmaps/Bibata-Modern-Catppuccin-Macchiato-Right",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#24273a"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#cad3f5"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#1e2030"
       }
     ]
@@ -346,15 +346,15 @@
     "out": "bitmaps/Bibata-Modern-Catppuccin-Mocha-Right",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#1e1e2e"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#cdd6f4"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#181825"
       }
     ]
@@ -364,15 +364,15 @@
     "out": "bitmaps/Bibata-Original-Classic",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#000000"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#FFFFFF"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#000000"
       }
     ]
@@ -382,15 +382,15 @@
     "out": "bitmaps/Bibata-Original-Rosepine",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#26233a"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#e0def4"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#191724"
       }
     ]
@@ -400,15 +400,15 @@
     "out": "bitmaps/Bibata-Original-Rosepine-Moon",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#393552"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#e0def4"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#232136"
       }
     ]
@@ -418,15 +418,15 @@
     "out": "bitmaps/Bibata-Original-Rosepine-Dawn",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#f2e9e1"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#464261"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#faf4ed"
       }
     ]
@@ -436,15 +436,15 @@
     "out": "bitmaps/Bibata-Original-Gruvbox-Dark",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#504945"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#fbf1c7"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#282828"
       }
     ]
@@ -454,15 +454,15 @@
     "out": "bitmaps/Bibata-Original-Gruvbox-Light",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#d5c4a1"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#282828"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#fbf1c7"
       }
     ]
@@ -472,15 +472,15 @@
     "out": "bitmaps/Bibata-Original-Catppuccin-Latte",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#eff1f5"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#4c4f69"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#e6e9ef"
       }
     ]
@@ -490,15 +490,15 @@
     "out": "bitmaps/Bibata-Original-Catppuccin-Frappe",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#303446"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#c6d0f5"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#292c3c"
       }
     ]
@@ -508,15 +508,15 @@
     "out": "bitmaps/Bibata-Original-Catppuccin-Macchiato",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#24273a"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#cad3f5"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#1e2030"
       }
     ]
@@ -526,15 +526,15 @@
     "out": "bitmaps/Bibata-Original-Catppuccin-Mocha",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#1e1e2e"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#cdd6f4"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#181825"
       }
     ]
@@ -544,15 +544,15 @@
     "out": "bitmaps/Bibata-Original-Classic-Right",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#000000"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#FFFFFF"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#000000"
       }
     ]
@@ -562,15 +562,15 @@
     "out": "bitmaps/Bibata-Original-Rosepine-Right",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#26233a"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#e0def4"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#191724"
       }
     ]
@@ -580,15 +580,15 @@
     "out": "bitmaps/Bibata-Original-Rosepine-Moon-Right",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#393552"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#e0def4"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#232136"
       }
     ]
@@ -598,15 +598,15 @@
     "out": "bitmaps/Bibata-Original-Rosepine-Dawn-Right",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#f2e9e1"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#464261"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#faf4ed"
       }
     ]
@@ -616,15 +616,15 @@
     "out": "bitmaps/Bibata-Original-Gruvbox-Dark-Right",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#504945"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#fbf1c7"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#282828"
       }
     ]
@@ -634,15 +634,15 @@
     "out": "bitmaps/Bibata-Original-Gruvbox-Light-Right",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#d5c4a1"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#282828"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#fbf1c7"
       }
     ]
@@ -652,15 +652,15 @@
     "out": "bitmaps/Bibata-Original-Catppuccin-Latte-Right",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#eff1f5"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#4c4f69"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#e6e9ef"
       }
     ]
@@ -670,15 +670,15 @@
     "out": "bitmaps/Bibata-Original-Catppuccin-Frappe-Right",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#303446"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#c6d0f5"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#292c3c"
       }
     ]
@@ -688,15 +688,15 @@
     "out": "bitmaps/Bibata-Original-Catppuccin-Macchiato-Right",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#24273a"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#cad3f5"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#1e2030"
       }
     ]
@@ -706,15 +706,15 @@
     "out": "bitmaps/Bibata-Original-Catppuccin-Mocha-Right",
     "colors": [
       {
-        "match": "#00FF00",
+        "match": "#0f0",
         "replace": "#1e1e2e"
       },
       {
-        "match": "#0000FF",
+        "match": "#00f",
         "replace": "#cdd6f4"
       },
       {
-        "match": "#FF0000",
+        "match": "#fe0000",
         "replace": "#181825"
       }
     ]

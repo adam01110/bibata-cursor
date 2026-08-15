@@ -161,7 +161,13 @@ Render every palette and layout combination configured in `render.json`:
 bun run generate
 ```
 
-The generated PNG assets are written to `bitmaps/<variant>`.
+The generated PNG assets are written to `bitmaps/<variant>`. Rendering uses up
+to four workers by default. Override the worker count when more CPU and memory
+are available:
+
+```bash
+BIBATA_GENERATE_JOBS=8 bun run generate
+```
 
 To change or add a color variant, add another entry to `render.json`. Each color
 mapping replaces the source SVG's base, outline, or activity color during
