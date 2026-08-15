@@ -14,6 +14,7 @@ dependencies:
     - xxd
 environment:
   ATP_IDENTIFIER: "adam0.dev"
+  PUPPETEER_SKIP_DOWNLOAD: "true"
 steps:
   - name: "Install dependencies"
     command: bun install --frozen-lockfile
