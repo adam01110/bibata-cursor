@@ -8,6 +8,7 @@
 /node_modules/
 
 # Nix
+/.direnv/
 /result*
 
 # Python

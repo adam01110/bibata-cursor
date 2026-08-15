@@ -144,12 +144,16 @@ then install both packages for combined XCursor and Hyprcursor support:
 
 ## Building
 
-Enter the development shell and install the locked JavaScript dependencies:
+The repository includes an [`.envrc`](.envrc) that uses the Nix flake development
+shell. With [direnv](https://direnv.net/) installed and hooked into your shell,
+allow it once and install the locked JavaScript dependencies:
 
 ```bash
-nix develop
+direnv allow
 bun install --frozen-lockfile
 ```
+
+Without direnv, enter the same shell manually with `nix develop`.
 
 Render every palette and layout combination configured in `render.json`:
 
