@@ -53,10 +53,30 @@ publish_artifact() {
     -d "$record"
 }
 
-if [[ $TANGLED_PIPELINE_KIND == "manual" ]]; then
-  echo "Manual pipelines build and package artifacts without publishing them."
-  exit 0
+tag_name=${TANGLED_RELEASE_TAG:-${TANGLED_REF_NAME:-}}
+tag_name=${tag_name#refs/tags/}
+if ! git show-ref --verify --quiet "refs/tags/$tag_name"; then
+  if [[ ${TANGLED_PIPELINE_KIND:-} != "manual" || -n ${TANGLED_RELEASE_TAG:-} ]]; then
+    echo "Release tag not found: $tag_name" >&2
+    exit 1
+  fi
+  mapfile -t release_tags < <(git tag --points-at HEAD)
+  if [[ ${#release_tags[@]} == 0 ]]; then
+    echo "Manual pipeline has no release tag at HEAD; skipping artifact publishing."
+    exit 0
+  elif [[ ${#release_tags[@]} != 1 ]]; then
+    echo "Multiple release tags at HEAD; set TANGLED_RELEASE_TAG explicitly." >&2
+    exit 1
+  fi
+  tag_name=${release_tags[0]}
 fi
+
+if [[ $(git rev-parse "refs/tags/$tag_name^{commit}") != $(git rev-parse HEAD) ]]; then
+  echo "Release tag $tag_name does not match the checked-out commit." >&2
+  exit 1
+fi
+tag_hash=$(git rev-parse "refs/tags/$tag_name")
+tag_bytes=$(printf '%s' "$tag_hash" | xxd -r -p | base64 | tr -d '=')
 
 resolved_did=$(resolve_did)
 pds=$(resolve_pds "$resolved_did")
@@ -72,9 +92,6 @@ jwt=$(jq -r .accessJwt <<<"$session")
 did=$(jq -r .did <<<"$session")
 [[ $did == "$resolved_did" ]]
 repo_did=$(resolve_repo_did)
-
-tag_hash=$(git rev-parse "$TANGLED_REF_NAME^{tag}")
-tag_bytes=$(printf '%s' "$tag_hash" | xxd -r -p | base64 | tr -d '=')
 
 for artifact_path in dist/*.zip; do
   publish_artifact "$artifact_path"
