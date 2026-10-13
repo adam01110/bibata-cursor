@@ -86,7 +86,7 @@
 
   [Overview](#overview) - [Variants](#variants) - [Usage](#usage)
   <br />
-  [Building](#building) - [Packaging](#packaging) - [Layout](#layout) - [Credits](#credits)
+  [Building](#building) - [Packaging](#packaging) - [Credits](#credits)
 </div>
 
 I created this fork to support themed versions of Bibata Cursor in Nix
@@ -212,6 +212,28 @@ The Hyprcursor package then converts the generated theme:
 ```bash
 bash scripts/build-hyprcursor.sh
 ```
+
+### Scalable SVG themes
+
+Build `cursors_scalable/` for KDE Plasma and GNOME SVG cursor consumers:
+
+```bash
+bun run build:scalable
+python3 scripts/build-scalable.py --theme Bibata-Modern-Classic --output bin
+```
+
+The exporter supports every palette and all four layouts. It uses the same
+hotspots, aliases, and animation delays as the XCursor build configuration.
+It preserves existing `cursors/` and `index.theme` files when adding SVGs to a
+compiled theme. Install the whole theme under an XDG icon directory such as
+`~/.local/share/icons`, not `~/.icons`, for GNOME SVG discovery. XCursor remains
+necessary for X11/XWayland fallback; Hyprcursor is a separate format.
+
+Animations contain 54 frames with a 40 ms delay (2.16 seconds per cycle).
+Adjust `x11_delay` in both build configurations to change playback speed;
+rendering `fps` is not a playback-speed setting. The scalable and Hyprcursor
+outputs store one resolution-independent SVG per frame instead of duplicating
+bitmap frames at every XCursor size. XCursor size selection remains unchanged.
 
 ## Credits
 

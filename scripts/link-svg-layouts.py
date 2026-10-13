@@ -21,14 +21,21 @@ def generate_symlinks(source_dirs: list[Path], destination: Path) -> None:
 
 def main() -> None:
     layouts = {
-        "modern": ["modern", "modern-arrow", "shared", "hand"],
-        "modern-right": ["modern-right", "modern-arrow", "shared", "hand-right"],
-        "original": ["original", "original-arrow", "shared", "hand"],
+        "modern": ["modern", "modern-arrow", "shared", "hand", "misc"],
+        "modern-right": [
+            "modern-right",
+            "modern-arrow",
+            "shared",
+            "hand-right",
+            "misc-right",
+        ],
+        "original": ["original", "original-arrow", "shared", "hand", "misc"],
         "original-right": [
             "original-right",
             "original-arrow",
             "shared",
             "hand-right",
+            "misc-right",
         ],
     }
 

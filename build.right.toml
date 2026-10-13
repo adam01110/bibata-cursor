@@ -238,7 +238,7 @@ x11_symlinks = [
 
 [cursors.pencil]
 png = 'pencil.png'
-x_hotspot = 46
+x_hotspot = 211
 y_hotspot = 211
 win_name = 'Handwriting'
 x11_name = 'pencil'
@@ -420,14 +420,14 @@ x11_symlinks = ["ibeam", "text"]
 
 [cursors.zoom_in]
 png = 'zoom-in.png'
-x_hotspot = 116
+x_hotspot = 140
 y_hotspot = 116
 win_name = 'Zoom-in'
 x11_name = 'zoom-in'
 
 [cursors.zoom_out]
 png = 'zoom-out.png'
-x_hotspot = 116
+x_hotspot = 140
 y_hotspot = 116
 win_name = 'Zoom-out'
 x11_name = 'zoom-out'
