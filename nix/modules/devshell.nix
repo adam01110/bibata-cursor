@@ -4,7 +4,9 @@
       mkShellNoCC {
         packages = [
           bun
+          hyprcursor
           python3
+          resvg
         ];
       };
   };

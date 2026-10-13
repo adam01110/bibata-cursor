@@ -191,9 +191,11 @@ bun run link
 ## Packaging
 
 The downstream packages in
-[`adam01110/nur`](https://github.com/adam01110/nur) fetch both this source tree
-and a rendered bitmap archive. They use [`build.toml`](build.toml) with `ctgen`
-to build an XCursor theme:
+[`adam01110/nur`](https://github.com/adam01110/nur) fetch this source tree,
+export the recolored scalable SVGs, and render fresh PNGs with `resvg`. They use
+[`build.toml`](build.toml) with `ctgen` to build the XCursor fallback and install
+both `cursors/` and `cursors_scalable/` together. No bitmap release archive is
+needed by these packages. For an existing bitmap directory, build XCursor with:
 
 ```bash
 ctgen build.toml \
@@ -207,10 +209,13 @@ name ends in `-Right`. It contains the right-handed hotspots required by the
 mirrored pointer artwork; using `build.toml` would produce incorrect click
 positions.
 
-The Hyprcursor package then converts the generated theme:
+Hyprcursor builds independently from the SVG sources, without an XCursor build,
+`ctgen`, or `xcur2png`. The scalable and Hyprcursor exporters share recoloring,
+frame ordering, aliases, hotspots, and timing:
 
 ```bash
-bash scripts/build-hyprcursor.sh
+bun run build:hyprcursor
+python3 scripts/build-hyprcursor.py --theme Bibata-Modern-Classic --output bin
 ```
 
 ### Scalable SVG themes

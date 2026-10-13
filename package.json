@@ -1,8 +1,9 @@
 {
   "type": "module",
   "scripts": {
-    "build:hyprcursor": "bash scripts/build-hyprcursor.sh",
+    "build:hyprcursor": "python3 scripts/build-hyprcursor.py",
     "build:scalable": "python3 scripts/build-scalable.py",
+    "build:bitmaps": "python3 scripts/build-bitmaps.py",
     "test": "python3 -m unittest discover -s tests",
     "clean": "rm -rf bin bitmaps dist hyprcursor-build",
     "generate": "bun scripts/generate-bitmaps.ts",

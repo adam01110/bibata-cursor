@@ -1,5 +1,6 @@
 import importlib.util
 import json
+import sys
 import tempfile
 import tomllib
 import unittest
@@ -7,6 +8,7 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "scripts"))
 
 
 def load_script(name):
@@ -61,24 +63,81 @@ class CursorTests(unittest.TestCase):
                     (theme / "cursors" / "sentinel").read_text(), "fallback"
                 )
 
-    def test_hyprcursor_frame_order_and_delay(self):
-        editor = load_script("edit-hyprcursor-meta")
-        result = editor.rewrite_metadata(
-            "hotspot_x = 0.5\ndefine_size = 24, wait-01.png, 40\n"
-            "define_size = 48, wait-01.png, 40\n",
-            ["/tmp/wait-10.svg\n/tmp/wait-2.svg\n/tmp/wait-1.svg"],
-        )
+    def test_hyprcursor_matches_scalable(self):
+        scalable_builder = load_script("build-scalable")
+        hypr_builder = load_script("build-hyprcursor")
+        renderers = json.loads((ROOT / "render.json").read_text())
+        with tempfile.TemporaryDirectory() as directory:
+            for name, renderer in renderers.items():
+                scalable = scalable_builder.build_theme(
+                    name, renderer, Path(directory) / "svg"
+                )
+                hypr = hypr_builder.write_theme(
+                    name, renderer, Path(directory) / "hypr", "2.0.3"
+                )
+                self.assertIn(f"name = {name}\n", (hypr / "manifest.hl").read_text())
+                self.assertIn("version = 2.0.3\n", (hypr / "manifest.hl").read_text())
+                for shape in (hypr / "hyprcursors").iterdir():
+                    metadata = json.loads(
+                        (
+                            scalable / "cursors_scalable" / shape.name / "metadata.json"
+                        ).read_text()
+                    )
+                    meta = (shape / "meta.hl").read_text().splitlines()
+                    self.assertIn(f"hotspot_x = {metadata[0]['hotspot_x'] / 256}", meta)
+                    self.assertIn(f"hotspot_y = {metadata[0]['hotspot_y'] / 256}", meta)
+                    definitions = [
+                        line for line in meta if line.startswith("define_size = ")
+                    ]
+                    self.assertEqual(len(definitions), len(metadata))
+                    for entry, definition in zip(metadata, definitions, strict=True):
+                        expected = f"define_size = 0, {entry['filename']}"
+                        if "delay" in entry:
+                            expected += f", {entry['delay']}"
+                        self.assertEqual(definition, expected)
+                        self.assertEqual(
+                            (shape / entry["filename"]).read_text(),
+                            (
+                                scalable
+                                / "cursors_scalable"
+                                / shape.name
+                                / entry["filename"]
+                            ).read_text(),
+                        )
+                    for alias in (
+                        line.split(" = ", 1)[1]
+                        for line in meta
+                        if line.startswith("define_override = ")
+                    ):
+                        self.assertEqual(
+                            (scalable / "cursors_scalable" / alias).resolve().name,
+                            shape.name,
+                        )
+                self.assertIn(
+                    "define_override = pointer",
+                    (hypr / "hyprcursors" / "hand2" / "meta.hl").read_text(),
+                )
+
+    def test_bitmap_sources_include_windows_shapes(self):
+        from svg_cursors import load_cursors
+
+        renderers = json.loads((ROOT / "render.json").read_text())
+        name = "Bibata-Modern-Classic"
+        cursors = load_cursors(name, renderers[name], include_windows=True)
+        by_name = {cursor.name: cursor for cursor in cursors}
+        self.assertEqual(len(by_name), 58)
+        self.assertEqual(by_name["person"].frames[0].filename, "person.svg")
+        self.assertEqual(by_name["pin"].frames[0].filename, "pin.svg")
+        self.assertEqual(len(by_name["wait"].frames), 54)
+
+    def test_numeric_frame_order(self):
+        from svg_cursors import frame_order
+
+        frames = [Path("wait-10.svg"), Path("wait-2.svg"), Path("wait-1.svg")]
         self.assertEqual(
-            result.splitlines(),
-            [
-                "hotspot_x = 0.5",
-                "define_size = 0, wait-1.svg, 40",
-                "define_size = 0, wait-2.svg, 40",
-                "define_size = 0, wait-10.svg, 40",
-            ],
+            [frame.name for frame in sorted(frames, key=frame_order)],
+            ["wait-1.svg", "wait-2.svg", "wait-10.svg"],
         )
-        with self.assertRaises(ValueError):
-            editor.rewrite_metadata("hotspot_x = 0.5\n", ["wait.svg"])
 
     def test_layouts_and_hotspots(self):
         for layout in ("modern", "original", "modern-right", "original-right"):

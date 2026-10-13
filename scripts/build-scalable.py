@@ -2,64 +2,38 @@
 
 import argparse
 import json
-import re
 import shutil
-import tomllib
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+from svg_cursors import NOMINAL_SIZE, ROOT, load_cursors, selected_themes, write_frames
 
 
 def build_theme(theme_name: str, renderer: dict, output_root: Path) -> Path:
-    config_name = "build.right.toml" if theme_name.endswith("-Right") else "build.toml"
-    config = tomllib.loads((ROOT / config_name).read_text())
-    defaults = config["cursors"]["fallback_settings"]
+    cursors = load_cursors(theme_name, renderer)
     theme = output_root / theme_name
     scalable = theme / "cursors_scalable"
     if scalable.exists():
         shutil.rmtree(scalable)
     scalable.mkdir(parents=True)
-    colors = {color["match"]: color["replace"] for color in renderer["colors"]}
-    pattern = re.compile("|".join(re.escape(color) for color in colors))
-    aliases = {}
-    for cursor in config["cursors"].values():
-        name = cursor.get("x11_name")
-        if not name:
-            continue
-        source = ROOT / renderer["dir"]
-        png = cursor["png"]
-        animated = "*" in png
-        if animated:
-            source = source / png.split("-*")[0]
-            frames = sorted(source.glob("*.svg"))
-        else:
-            frames = [source / Path(png).with_suffix(".svg")]
-        if not frames:
-            raise ValueError(f"No SVG frames for {theme_name}/{name}")
-        destination = scalable / name
-        destination.mkdir()
+    for cursor in cursors:
+        destination = scalable / cursor.name
+        write_frames(cursor, destination)
         metadata = []
-        for frame in frames:
-            content = pattern.sub(
-                lambda match: colors[match.group()], frame.read_text()
-            )
-            (destination / frame.name).write_text(content)
+        for frame in cursor.frames:
             entry = {
-                "filename": frame.name,
-                "hotspot_x": cursor.get("x_hotspot", defaults["x_hotspot"]),
-                "hotspot_y": cursor.get("y_hotspot", defaults["y_hotspot"]),
-                "nominal_size": 256,
+                "filename": frame.filename,
+                "hotspot_x": cursor.hotspot_x,
+                "hotspot_y": cursor.hotspot_y,
+                "nominal_size": NOMINAL_SIZE,
             }
-            if animated:
-                entry["delay"] = cursor.get("x11_delay", defaults["x11_delay"])
+            if frame.delay is not None:
+                entry["delay"] = frame.delay
             metadata.append(entry)
         (destination / "metadata.json").write_text(
             json.dumps(metadata, indent=2) + "\n"
         )
-        for alias in cursor.get("x11_symlinks", []):
-            aliases[alias] = name
-    for alias, target in aliases.items():
-        (scalable / alias).symlink_to(target)
+        for alias in cursor.aliases:
+            (scalable / alias).symlink_to(cursor.name)
     index = theme / "index.theme"
     if not index.exists():
         index.write_text(
@@ -75,13 +49,9 @@ def main() -> None:
     parser.add_argument("--output", type=Path, default=ROOT / "bin")
     parser.add_argument("--theme", help="Build only this render.json theme")
     args = parser.parse_args()
-    renderers = json.loads((ROOT / "render.json").read_text())
-    if args.theme and args.theme not in renderers:
-        parser.error(f"Unknown theme: {args.theme}")
-    for name, renderer in renderers.items():
-        if args.theme is None or name == args.theme:
-            build_theme(name, renderer, args.output)
-            print(f"Built {name}/cursors_scalable")
+    for name, renderer in selected_themes(parser, args.theme).items():
+        build_theme(name, renderer, args.output)
+        print(f"Built {name}/cursors_scalable")
 
 
 if __name__ == "__main__":
