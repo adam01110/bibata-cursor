@@ -3,6 +3,7 @@
     devShells.default = with pkgs;
       mkShellNoCC {
         packages = [
+          # keep-sorted start
           bun
           git
           hyprcursor
@@ -10,6 +11,7 @@
           python3
           resvg
           xxd
+          # keep-sorted end
         ];
       };
   };
