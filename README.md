@@ -77,12 +77,12 @@
 
   Custom Bibata color variants and source layouts for my Nix cursor packages.
 
-  [![Tags](https://img.shields.io/badge/Tangled-tags-cc241d?style=flat-square&labelColor=504945)](https://tangled.org/did:plc:v3hmlmsytt6b2zvi3e35o2oj/bibata-cursor/tags)
-  [![Repo Size](https://img.shields.io/github/repo-size/adam01110/bibata-cursor?style=flat-square&label=repo%20size&labelColor=504945&color=3c3836)](https://github.com/adam01110/bibata-cursor)
+  [![Tags](https://img.shields.io/badge/Tangled-tags-3c3836?style=flat-square&labelColor=504945&logo=tangled&logoColor=ebdbb2)](https://tangled.org/did:plc:v3hmlmsytt6b2zvi3e35o2oj/bibata-cursor/tags)
+  [![Repo Size](https://img.shields.io/github/repo-size/adam01110/bibata-cursor?style=flat-square&labelColor=504945&label=repo%20size&color=3c3836)](https://github.com/adam01110/bibata-cursor)
   <br />
   [![Nix](https://img.shields.io/badge/Nix-flakes-689d6a?style=flat-square&labelColor=504945&logo=nixos&logoColor=ebdbb2)](https://nixos.wiki/wiki/Flakes)
-  [![Bun](https://img.shields.io/badge/Bun-1.3-fb4934?style=flat-square&labelColor=504945&logo=bun&logoColor=ebdbb2)](https://bun.sh)
-  [![License](https://img.shields.io/github/license/adam01110/bibata-cursor?style=flat-square&labelColor=504945&color=b16286)](LICENSE)
+  [![Bun](https://img.shields.io/badge/Bun-1.3-d79921?style=flat-square&labelColor=504945&logo=bun&logoColor=ebdbb2)](https://bun.sh)
+  [![License](https://img.shields.io/github/license/adam01110/bibata-cursor?style=flat-square&labelColor=504945&color=3c3836)](LICENSE)
 
   [Overview](#overview) - [Variants](#variants) - [Usage](#usage)
   <br />
